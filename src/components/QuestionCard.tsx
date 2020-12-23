@@ -12,17 +12,17 @@ type Props = {
 
 const QuestionCard: React.FC<Props> = ({
   question,
-  answer,
+  answers,
   callback,
   userAnswer,
   questionNr,
   totalQuestions,
 }) => (
   <div>
-    <p classname="number">
+    <p className="number">
       Question: {questionNr} / {totalQuestions}
     </p>
-    <p dangerouslySetInnerHTML={{ __html: question }}>
+    <p dangerouslySetInnerHTML={{ __html: question }}></p>
     <div>
       {answers.map(answer => (
         <div>

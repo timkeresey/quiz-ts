@@ -36,11 +36,18 @@ const App = () => {
     setUserAnswers([]);
     setNumber(0);
     setLoading(false);
-  }
+  };
 
   const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
-
-  }
+    if (!gameOver) {
+      //Users answer
+      const answer = e.currentTarget.value;
+      //check answer against correct answer
+      const correct = questions[number].correct_answer === answer;
+      //add score if answer is correct
+      if (correct) setScore(prev => prev + 1);
+    }
+  };
 
   const nextQuestion = () => {
 
